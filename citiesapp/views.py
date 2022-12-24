@@ -1,6 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import City
 # Create your views here.
 
 def index(request):
-    return HttpResponse('Hello World')
+    cities = City.objects.all()
+
+    print('cities', cities)
+
+    return render(request, 'cities.html', {'cities': cities})
+
+def get_city(request, _id):
+    city = City.objects.get(id= _id)
+
+    print('city', city)
+
+    return render(request, 'city.html', {'city': city})
