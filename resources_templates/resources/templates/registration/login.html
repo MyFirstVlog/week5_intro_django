@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <html lang="en">
@@ -16,6 +15,8 @@
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     {# Static Files #}
+    <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+    <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
 </head>
@@ -26,33 +27,17 @@
         </div>
     </div>
     <div class="container">
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-5">
-                <img src="{{city.image.url}}" class="img-fluid">
+        <form method="post" action="/">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="col">
-                <div class="jumbotron">
-                    <h1 class="display-4">{{city.name}}</h1>
-                    <hr class="my-4">
-                    <p>{{city.description}}n</p>
-                </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
-        </div>
-        <hr>
-        
-        <div class="comment">
-            <div class="date">Miercoles 21 de Diciembre</div>
-            <strong>Camila Gomez</strong>
-            <p>Este es un comentario de Ejemplo</p>
-        </div>
-    
-        <div class="container">
-            <h2>Leave your comments</h2>
-            <form action="/" method="POST" class="post-form">
-                <p>Esto es un formulario para agregar comentarios</p>
-                <button type="submit" class="save btn btn-dark">Save</button>
-            </form>
-        </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
     </div>
 </body>
 </html>
