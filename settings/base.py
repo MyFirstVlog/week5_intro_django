@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-uog@uyz9y8rs-nwg^zbpf$enkzty(v)*=+yb0jjcjzx$8c8gq="
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -56,7 +49,7 @@ ROOT_URLCONF = "week5introdjango.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ['citiesapp/templates'],
+        "DIRS": ['templates' ,'citiesapp/templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -72,23 +65,8 @@ TEMPLATES = [
 WSGI_APPLICATION = "week5introdjango.wsgi.application"
 
 
-# Database
+# Database, se quita porque especifico del entorno de ejecucion y se pone en el archivo especifico
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-pymysql.version_info = (1, 4, 2, 'final', 0)
-
-pymysql.install_as_MySQLdb()
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cities',
-        'USER': 'root',
-        'PASSWORD': 'RealMadrid97!',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
 
 
 # Password validation
