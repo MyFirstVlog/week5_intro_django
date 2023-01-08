@@ -25,10 +25,12 @@
 
     <div class="container">
         <h2>Leave your comments</h2>
-        <form action="/" method="POST" class="post-form">
-            <p>Esto es un formulario para agregar comentarios</p>
+        <form action="{% url 'create_new_comment' _id=city.id %}" method="POST" class="post-form">
+            {{form}}
             <button type="submit" class="save btn btn-dark">Save</button>
         </form>
     </div>
 </div>
 {% endblock %}
+
+{% comment %} #Cuangdo haga el post envia la info a la url dadan qie se crea en las urls.py de la app {% endcomment %}
