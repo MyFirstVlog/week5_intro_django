@@ -31,6 +31,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    #django apps de terceros mirar documentacion
+    "django_countries",
+    #djanfgo apps
     "citiesapp",
 ]
 
